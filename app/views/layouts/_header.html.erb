@@ -1,0 +1,6 @@
+<% if admin_signed_in? %>
+  <p class="nav_user ">
+    Welcome, <b><%= current_admin.email %></b> <%= '!' %><br>
+    <%= link_to 'Выйти', destroy_admin_session_path, method: :delete %><br>
+  </p>
+<% end %>
