@@ -38,8 +38,7 @@ group :test do
   gem "capybara", "~> 3.37"
   gem "webdrivers", "~> 5.0"
   gem "launchy", "~> 2.5"
+  gem "rails-controller-testing", "~> 1.0"
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-

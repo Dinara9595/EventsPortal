@@ -11,6 +11,6 @@ feature 'Admin can sign out' do
     click_on 'Log in'
     click_on 'Выйти'
 
-    expect(page).to have_content 'Signed out successfully.'
+    expect(page).to have_content 'You need to sign in before continuing.'
   end
 end

@@ -1,0 +1,15 @@
+<%= form_with model: [:admin, @event], local: true do |form| %>
+  <%= render 'shared/errors', resource: @event  %>
+
+  <p>
+    <%= form.label :title %>
+    <%= form.text_area :title, size: "50x3", id: :event_title %>
+  </p>
+
+  <p>
+    <%= form.label :body %>
+    <%= form.text_area :body, size: "150x20", id: :event_body %>
+  </p>
+
+  <p><%= form.submit %>
+<% end %>

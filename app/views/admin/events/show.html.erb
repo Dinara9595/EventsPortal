@@ -1,0 +1,7 @@
+<h1><%= @event.title%></h1>
+<li>
+  <p><%= @event.body%></p>
+</li>
+
+<%= link_to 'Редактировать', edit_admin_event_path(@event) %> |
+<%= link_to 'Назад', admin_events_path %>

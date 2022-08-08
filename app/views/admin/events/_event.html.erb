@@ -1,0 +1,12 @@
+<tr class="text-center">
+  <td><%= event.title %></td>
+  <td><%= event.created_at %></td>
+  <td><%= event.admin.email %></td>
+  <td><%= event.published %></td>
+  <td><%= event.body %></td>
+  <td><%= link_to 'Просмотр', admin_event_path(event) %> |
+      <%= link_to 'Редактировать', edit_admin_event_path(event) %> |
+      <%= link_to 'Удалить', admin_event_path(event),
+                  method: :delete,
+                  data: { confirm: "Вы уверены?"} %></td>
+</tr>
