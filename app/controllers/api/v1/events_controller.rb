@@ -2,7 +2,7 @@ module Api
   module V1
     class EventsController < ApplicationController
       def index
-        events = Event.all
+        events = Event.all #where(published: true)
 
         render json: EventSerializer.new(events)
       end
