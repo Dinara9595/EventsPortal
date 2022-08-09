@@ -101,6 +101,8 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    jsonapi-serializer (2.2.0)
+      activesupport (>= 4.2)
     launchy (2.5.0)
       addressable (~> 2.7)
     listen (3.7.1)
@@ -202,7 +204,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    selenium-webdriver (4.3.0)
+    selenium-webdriver (4.4.0)
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
@@ -259,6 +261,7 @@ DEPENDENCIES
   devise (~> 4.8)
   factory_bot_rails (~> 6.2)
   jbuilder (~> 2.7)
+  jsonapi-serializer (~> 2.2)
   launchy (~> 2.5)
   listen (~> 3.3)
   pg (~> 1.1)

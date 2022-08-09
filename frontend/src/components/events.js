@@ -1,4 +1,3 @@
-import {Link} from "react-router-dom";
 import Event from "./event";
 
 function Events() {

@@ -3,8 +3,7 @@ import Events from './components/events.js';
 import Home from './components/home.js';
 import NotFound from './components/not_found.js';
 import Navigation from "./components/navigation";
-import {Routes, Route, NavLink} from "react-router-dom";
-
+import {Routes, Route} from "react-router-dom";
 
 function App() {
   return (
@@ -13,7 +12,7 @@ function App() {
         <Routes>
           <Route path="events" element={<Events />}/>
           <Route path="/" element={<Home />}/>
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<NotFound />}/>
         </Routes>
       </div>
   );
