@@ -1,6 +1,8 @@
 function Event(props) {
     const title = props.value.title;
     const body = props.value.body;
+    const image = props.value.image;
+
     return (
         <div>
             <div>
@@ -8,6 +10,9 @@ function Event(props) {
             </div>
             <div>
                 {body}
+            </div>
+            <div>
+                <img src={image}/>
             </div>
         </div>
     )
