@@ -5,6 +5,7 @@ import Home from "./components/home.js";
 import NotFound from "./components/not_found.js";
 import Navigation from "./components/navigation";
 import { Routes, Route } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (

@@ -1,4 +1,8 @@
 import React from "react";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import Stack from "react-bootstrap/Stack";
+import InputGroup from "react-bootstrap/InputGroup";
 
 class DatePicker extends React.Component {
   constructor(props) {
@@ -27,15 +31,21 @@ class DatePicker extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          От: <input onChange={this.handleChangeFrom} type="date" />
-        </label>
-        <label>
-          До: <input onChange={this.handleChangeTo} type="date" />
-        </label>
-        <input type="submit" value="Поиск" />
-      </form>
+      <Form onSubmit={this.handleSubmit}>
+        <Stack direction="horizontal" gap={3}>
+          <InputGroup>
+            <InputGroup.Text>От:</InputGroup.Text>
+            <Form.Control onChange={this.handleChangeFrom} type="date" />
+          </InputGroup>
+          <InputGroup>
+            <InputGroup.Text>До:</InputGroup.Text>
+            <Form.Control onChange={this.handleChangeTo} type="date" />
+          </InputGroup>
+          <Button variant="primary" type="submit">
+            Поиск
+          </Button>
+        </Stack>
+      </Form>
     );
   }
 }
