@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Card from 'react-bootstrap/Card';
 
 function List_item(props) {
   const title = props.value.title;
@@ -6,15 +7,14 @@ function List_item(props) {
   const image = props.value.image;
 
   return (
-    <div>
-      <div>
-        <Link to={props.id}>{title}</Link>
-      </div>
-      <div>{body}</div>
-      <div>
-        <img src={image} />
-      </div>
-    </div>
+      <Card style={{ width: '50rem' }}>
+          <Card.Img src={image} />
+          <Card.Body>
+              <Card.Title>{title}</Card.Title>
+              <Card.Text>{body}</Card.Text>
+              <Link to={props.id} class="btn btn-primary">Перейти к новости</Link>
+          </Card.Body>
+      </Card>
   );
 }
 
