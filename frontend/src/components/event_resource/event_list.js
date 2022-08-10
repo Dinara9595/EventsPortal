@@ -76,7 +76,7 @@ class EventList extends React.Component {
           <DatePicker onDateChange={this.handleDateChange} />
           <ul>
             {news.map((post) => (
-              <List_item key={post.id} value={post.attributes} />
+              <List_item key={post.id} value={post.attributes} id={post.id} />
             ))}
           </ul>
         </div>

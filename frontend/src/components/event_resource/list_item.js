@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function List_item(props) {
   const title = props.value.title;
   const body = props.value.body;
@@ -5,7 +7,9 @@ function List_item(props) {
 
   return (
     <div>
-      <div>{title}</div>
+      <div>
+        <Link to={props.id}>{title}</Link>
+      </div>
       <div>{body}</div>
       <div>
         <img src={image} />
