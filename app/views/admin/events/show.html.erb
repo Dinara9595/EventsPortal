@@ -2,6 +2,10 @@
 <li>
   <p><%= @event.body%></p>
 </li>
+<% if @event.image.attached? %>
+  <%= image_tag @event.image %>
+<% end %>
+
 
 <%= link_to 'Редактировать', edit_admin_event_path(@event) %> |
 <%= link_to 'Назад', admin_events_path %>

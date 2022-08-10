@@ -16,5 +16,10 @@
     <%= form.select :published, [true, false] %>
   </p>
 
+  <p>
+    <%= form.label :image %>
+    <%= form.file_field :image, accept: 'image/png, image/jpg' %>
+  </p>
+
   <p><%= form.submit %>
 <% end %>

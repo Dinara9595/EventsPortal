@@ -3,6 +3,11 @@
   <td><%= event.created_at %></td>
   <td><%= event.admin.email %></td>
   <td><%= event.published %></td>
+  <td><% if event.image.attached? %>
+        <%= link_to event.image.filename.to_s, url_for(event.image) %>
+      <% else %>
+        <%= 'Не добавлено'%>
+    <% end %></td>
   <td><%= event.body %></td>
   <td><%= link_to 'Просмотр', admin_event_path(event) %> |
       <%= link_to 'Редактировать', edit_admin_event_path(event) %> |

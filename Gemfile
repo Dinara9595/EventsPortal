@@ -20,6 +20,7 @@ gem "devise", "~> 4.8"
 gem 'bootsnap', '>= 1.4.4', require: false
 gem "jsonapi-serializer", "~> 2.2"
 gem "rack-cors", "~> 1.1"
+gem "active_storage_validations", "~> 0.9.8"
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
