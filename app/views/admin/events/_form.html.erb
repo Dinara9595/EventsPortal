@@ -11,5 +11,10 @@
     <%= form.text_area :body, size: "150x20", id: :event_body %>
   </p>
 
+  <p>
+    <%= form.label :published %>
+    <%= form.select :published, [true, false] %>
+  </p>
+
   <p><%= form.submit %>
 <% end %>
