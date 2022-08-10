@@ -5,13 +5,28 @@ class Events extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-          error: null,
-          isLoaded: false,
-          news: []
+            error: null,
+            isLoaded: false,
+            news: [],
         };
     }
 
     componentDidMount() {
+        if (this.state.news.length === 0 ) {
+            this.fetchEvents()
+        }
+
+        this.timerID = setInterval(
+            () => this.fetchEvents(),
+            10000
+        );
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.timerID);
+    }
+
+    fetchEvents () {
         fetch('http://localhost:10524/api/v1/events')
             .then(response => response.json())
             .then(
@@ -28,6 +43,7 @@ class Events extends React.Component{
                     })
                 }
             )
+
     }
 
     render() {

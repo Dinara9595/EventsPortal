@@ -5,5 +5,4 @@ class Event < ApplicationRecord
 
   validates :body, presence: true
   validates :title, uniqueness: true, presence: true
-  validates :image, attached: true, content_type: [:png, :jpeg, :jpg]
 end

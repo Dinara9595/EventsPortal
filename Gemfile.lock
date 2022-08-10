@@ -39,11 +39,6 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
-    active_storage_validations (0.9.8)
-      activejob (>= 5.2.0)
-      activemodel (>= 5.2.0)
-      activestorage (>= 5.2.0)
-      activesupport (>= 5.2.0)
     activejob (6.1.6.1)
       activesupport (= 6.1.6.1)
       globalid (>= 0.3.6)
@@ -130,7 +125,7 @@ GEM
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     orm_adapter (0.5.0)
-    pg (1.4.2)
+    pg (1.4.3)
     public_suffix (4.0.7)
     puma (5.6.4)
       nio4r (~> 2.0)
@@ -262,7 +257,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_storage_validations (~> 0.9.8)
   bootsnap (>= 1.4.4)
   byebug
   capybara (~> 3.37)

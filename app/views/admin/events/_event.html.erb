@@ -5,8 +5,6 @@
   <td><%= event.published %></td>
   <td><% if event.image.attached? %>
         <%= link_to event.image.filename.to_s, url_for(event.image) %>
-      <% else %>
-        <%= 'Не добавлено'%>
     <% end %></td>
   <td><%= event.body %></td>
   <td><%= link_to 'Просмотр', admin_event_path(event) %> |
