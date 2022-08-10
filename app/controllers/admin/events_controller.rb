@@ -9,6 +9,7 @@ class Admin::EventsController < Admin::BaseController
   def new
     @event = Event.new
   end
+
   def edit; end
 
   def create
