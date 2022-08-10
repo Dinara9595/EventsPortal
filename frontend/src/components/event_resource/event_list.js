@@ -1,8 +1,8 @@
-import Event from './event';
+import List_item from './list_item';
 import React from 'react';
-import DatePicker from './date_picker';
+import DatePicker from '../date_picker';
 
-class Events extends React.Component{
+class EventList extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
@@ -79,7 +79,7 @@ class Events extends React.Component{
                     <DatePicker onDateChange={this.handleDateChange}/>
                     <ul>
                         {news.map(post =>
-                            <Event key={post.id} value={post.attributes}/>
+                            <List_item key={post.id} value={post.attributes}/>
                         )}
                     </ul>
                 </div>
@@ -88,4 +88,4 @@ class Events extends React.Component{
     }
 }
 
-export default Events;
+export default EventList;

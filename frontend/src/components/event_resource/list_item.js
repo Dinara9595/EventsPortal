@@ -1,4 +1,4 @@
-function Event(props) {
+function List_item(props) {
     const title = props.value.title;
     const body = props.value.body;
     const image = props.value.image;
@@ -18,4 +18,4 @@ function Event(props) {
     )
 }
 
-export default Event;
+export default List_item;
