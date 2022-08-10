@@ -1,5 +1,6 @@
-import Event from "./event";
+import Event from './event';
 import React from 'react';
+import DatePicker from './date_picker';
 
 class Events extends React.Component{
     constructor(props) {
@@ -8,7 +9,10 @@ class Events extends React.Component{
             error: null,
             isLoaded: false,
             news: [],
+            date_range: []
         };
+
+        this.handleDateChange = this.handleDateChange.bind(this);
     }
 
     componentDidMount() {
@@ -27,7 +31,7 @@ class Events extends React.Component{
     }
 
     fetchEvents () {
-        fetch('http://localhost:10524/api/v1/events')
+        fetch(this.buildUrl())
             .then(response => response.json())
             .then(
                 (result) => {
@@ -43,7 +47,24 @@ class Events extends React.Component{
                     })
                 }
             )
+    }
 
+    handleDateChange(input) {
+        this.setState({date_range: input}, () => this.fetchEvents());
+    }
+
+    buildUrl() {
+        const parsedUrl = new URL('http://localhost:10524/api/v1/events');
+
+        if (this.state.date_range[0]) {
+            parsedUrl.searchParams.set('start_date', this.state.date_range[0]);
+        }
+
+        if (this.state.date_range[1]) {
+            parsedUrl.searchParams.set('end_date', this.state.date_range[1]);
+        }
+
+        return parsedUrl;
     }
 
     render() {
@@ -54,11 +75,14 @@ class Events extends React.Component{
             return <div>Загрузка...</div>;
         } else {
             return (
-                <ul>
-                    {news.map(post =>
-                        <Event key={post.id} value={post.attributes}/>
-                    )}
-                </ul>
+                <div>
+                    <DatePicker onDateChange={this.handleDateChange}/>
+                    <ul>
+                        {news.map(post =>
+                            <Event key={post.id} value={post.attributes}/>
+                        )}
+                    </ul>
+                </div>
             );
         }
     }
