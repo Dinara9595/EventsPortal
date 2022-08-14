@@ -7,35 +7,29 @@ RSpec.describe Admin::EventsController, type: :controller do
   before { login(client) }
 
   describe 'GET #index' do
-    let(:events) { create_list(:event, 3) }
-
-    before { get :index }
-
     it 'renders index view' do
+      get :index
       expect(response).to render_template :index
     end
   end
 
   describe 'GET #show' do
-    before { get :show, params: { id: event } }
-
     it 'renders show view' do
+      get :show, params: { id: event }
       expect(response).to render_template :show
     end
   end
 
   describe 'GET #new' do
-    before { get :new }
-
     it 'renders new view' do
+      get :new
       expect(response).to render_template :new
     end
   end
 
   describe 'GET #edit' do
-    before { get :edit, params: { id: event } }
-
     it 'renders edit view' do
+      get :edit, params: { id: event }
       expect(response).to render_template :edit
     end
   end
@@ -59,7 +53,7 @@ RSpec.describe Admin::EventsController, type: :controller do
       let(:params) { { admin_id: client.id, event: attributes_for(:event, :invalid) } }
 
       it 'does not save the event' do
-        expect { post :create, params: params }.to_not change(Event, :count)
+        expect { post :create, params: params }.not_to change(Event, :count)
       end
 
       it 're-renders new view' do
