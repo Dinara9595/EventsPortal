@@ -1,4 +1,5 @@
 # README
+# EventsPortal
 
 Здравствуй, username!
 
@@ -67,5 +68,3 @@ RAILS_ENV=test bundle exec rails db:create
 RAILS_ENV=test bundle exec rails db:schema:load
 bundle exec rspec
 ```
-
-# EventsPortal
