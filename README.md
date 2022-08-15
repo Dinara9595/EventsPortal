@@ -1,6 +1,7 @@
 # README
+# EventsPortal
 
-Здравствуй username!
+Здравствуй, username!
 
 Это приложение выполнено в рамках тестового задания.
 Оно представляет собой сайт по типу портала новостей.
@@ -67,5 +68,3 @@ RAILS_ENV=test bundle exec rails db:create
 RAILS_ENV=test bundle exec rails db:schema:load
 bundle exec rspec
 ```
-
-# EventsPortal
